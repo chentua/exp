@@ -5,10 +5,16 @@ import requests
 import sys
 from urllib3.exceptions import InsecureRequestWarning
 
+if len(sys.argv)<2:
+	print("示例:python3 exp.py -h");
+	print("请选择以下选项")
+	print("-h")
+	exit()
+
 if sys.argv[1]=='-h':
 	print("使用方式: python3 exp.py -t url");
 	print("示例:python3 exp.py -t https:192.168.1.1/");
-	exit();
+	exit()
 
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
